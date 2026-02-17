@@ -11,7 +11,7 @@ export interface Props {
 const { title } = Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
@@ -28,7 +28,7 @@ const { title } = Astro.props;
 			rel="stylesheet"
 		/>
 
-		<title>{title ? `${title} | Forex4You` : "Forex4You"}</title>
+		<title>{title ? `${title} | Forex2You` : "Forex2You"}</title>
 		<style>
 			html {
 				line-height: 1.15;
@@ -54,16 +54,16 @@ const { title } = Astro.props;
 		<Footer />
 		<!-- <ScrollToTop client:only /> -->
 		<Popup />
-		   
-    <!-- Whatsapp Start -->
-    <!-- <a-->
 
-    <!-- href="https://wa.me/447586359227" class="wpp-float-btn" target="_blank">-->
+		<!-- Whatsapp Start -->
+		<!-- <a-->
 
-    <!-- <iconify-icon icon="mdi:whatsapp" style="margin-top: 16px;"></iconify-icon>-->
+		<!-- href="https://wa.me/447586359227" class="wpp-float-btn" target="_blank">-->
 
-    <!-- </a> -->
-    <!-- Whatsapp End -->
+		<!-- <iconify-icon icon="mdi:whatsapp" style="margin-top: 16px;"></iconify-icon>-->
+
+		<!-- </a> -->
+		<!-- Whatsapp End -->
 		<script defer src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 	</body>
 </html>
@@ -186,7 +186,8 @@ const { title } = Astro.props;
 }
 
 </style>
-<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"
+></script>
 <script>
 	window.addEventListener("DOMContentLoaded", function () {
 		//@ts-ignore

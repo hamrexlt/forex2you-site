@@ -55,7 +55,7 @@ const Header: FC<{ pathname: string }> = ({ pathname }) => {
           <a href="#">
             {/* <img src={logo} width="140" alt="" /> */}
             <span className="text-white lg:text-[25px] text-[22px] font-bold">
-              Forex4You
+              Forex2You
             </span>
           </a>
         </div>
@@ -93,7 +93,7 @@ const Header: FC<{ pathname: string }> = ({ pathname }) => {
             </svg>
           </a> */}
           <a
-            href="https://app.forex4yoult.space"
+            href="https://app.forex2you.org"
             id=""
             className="text-[15px] text-black bg-custom-yellow px-[25px] py-[17px] md:inline-block hidden hover:bg-white hover:text-custom-dark-primary custom-transition ml-[35px]"
           >
@@ -143,14 +143,14 @@ const MobileNav = forwardRef(function (props: any, ref: any) {
           <a href="#">
             {/* <img src={logo} width="140" alt="" /> */}
             <span className="text-white text-[22px] font-bold inline-block">
-              Forex4You
+              Forex2You
             </span>
           </a>
         </div>
         {/*  */}
         <a
           className="w-full text-center mx-0 mb-[20px] text-black flex items-center bg-custom-yellow justify-center h-[45px]"
-          href="https://app.forex4yoult.space"
+          href="https://app.forex2you.org"
         >
           Login
         </a>
@@ -209,8 +209,8 @@ const MobileNav = forwardRef(function (props: any, ref: any) {
         <ul className="mx-0 my-[20px]">
           <li className="text-[14px] relative flex items-center text-[#a2a2b1] font-medium">
             <i className="text-white bg-dark-secondary w-[32px] h-[32px] text-center rounded-[50%] mr-[10px] flex items-center justify-center icon-email"></i>
-            <a href="mailto:support@Forex4You.com" className="text-white">
-              support@Forex4You.com
+            <a href="mailto:support@Forex2You.com" className="text-white">
+              support@Forex2You.com
             </a>
           </li>
           <li className="text-[14px] relative flex items-center text-[#a2a2b1] font-medium mt-[15px]">
