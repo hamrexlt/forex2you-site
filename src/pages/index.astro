@@ -1,0 +1,38 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/sections/Footer.astro";
+import Cta from "../components/sections/Cta.astro";
+import NeedHelpSection from "../components/sections/NeedHelpSection.astro";
+import PortfolioSection from "../components/sections/PortfolioSection.astro";
+import TrustSection from "../components/sections/TrustSection.astro";
+import ExploreSection from "../components/sections/ExploreSection.astro";
+import EarnDailySection from "../components/sections/EarnDailySection";
+import BuildPortfolioSection from "../components/sections/BuildPortfolioSection.astro";
+import PopularCryptoSection from "../components/sections/PopularCryptoSection";
+import HeroSection from "../components/sections/HeroSection.astro";
+import FAQSection from "../components/sections/FAQsSection.astro";
+import AboutCompanySection from "../components/sections/AboutCompanySection.astro";
+import ServicesSection from "../components/sections/ServicesSection.astro";
+import TrustSection2 from "../components/sections/TrustSection2.astro";
+import Pricing from "../components/sections/Pricing.astro";
+---
+
+<Layout>
+  <main class="">
+    <HeroSection />
+    <PopularCryptoSection client:visible />
+    <AboutCompanySection />
+    <ServicesSection />
+    <TrustSection2 />
+    <BuildPortfolioSection />
+    <EarnDailySection client:visible />
+    <ExploreSection />
+    <TrustSection />
+    <Pricing />
+    <PortfolioSection />
+    <NeedHelpSection />
+    <FAQSection showHeader={true} />
+
+    <Cta />
+  </main>
+</Layout>

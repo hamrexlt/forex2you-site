@@ -1,0 +1,135 @@
+<div class="pop-up px-3 py-5" id="pop-up">
+    <p class="pop-text">
+        Someone from <span id="pop-up-country"></span> just earned
+        <br />
+        <b id="pop-up-balance" class="text-muted"></b>
+    </p>
+</div>
+
+<style>
+    .pop-up {
+        max-height: 130px;
+        bottom: 18px;
+        /* left: 0; */
+        left: -17px;
+        position: fixed;
+        /* padding: 0.9rem 1rem;
+        margin: 0.8rem 1rem; */
+        max-width: 270px;
+        --tw-bg-opacity: 1;
+        background-color: #e8e8e8;
+        font-style: normal;
+        font-size: 13.5px;
+        border-left-width: 0.7rem;
+        border-color: theme(colors.custom.yellow);
+        border-left-style: solid;
+        border-right-style: solid;
+        /* border-width: 1rem; */
+        border-right-width: 1px;
+        -webkit-box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+        box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+        z-index: 99999999999;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        place-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        transform: translateX(-100%);
+        -webkit-transform: translateX(-100%);
+    }
+    .pop-up.slide-in {
+        animation: slide-in 0.5s forwards;
+        -webkit-animation: slide-in 0.5s forwards;
+    }
+
+    .pop-up p {
+        color: black;
+    }
+
+    .pop-up #balance {
+        color: theme(colors.dark.secondary);
+    }
+
+    .pop-up.slide-in {
+        animation: slide-in 0.5s forwards;
+        -webkit-animation: slide-in 0.5s forwards;
+    }
+
+    .pop-up.slide-out {
+        animation: slide-out 0.5s forwards;
+        -webkit-animation: slide-out 0.5s forwards;
+    }
+
+    @keyframes slide-out {
+        0% {
+            -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+        }
+
+        100% {
+            -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+        }
+    }
+
+    @-webkit-keyframes slide-out {
+        0% {
+            -webkit-transform: translateX(0%);
+        }
+
+        100% {
+            -webkit-transform: translateX(-100%);
+        }
+    }
+
+    @keyframes slide-in {
+        100% {
+            left: 0;
+            -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+        }
+    }
+
+    @-webkit-keyframes slide-in {
+        100% {
+            -webkit-transform: translateX(0%);
+        }
+    }
+</style>
+
+<script>
+    import { faker } from "@faker-js/faker";
+    let country = document.querySelector("#pop-up-country");
+    let balance = document.querySelector("#pop-up-balance");
+    let popUp = document.querySelector(".pop-up");
+
+    window.addEventListener("DOMContentLoaded", function () {
+        country!.textContent = faker.address.country();
+        balance!.textContent =
+            "$" + faker.finance.amount().split(".").join(",") + 0;
+        // const popUpLoad = function () {
+        //     setTimeout(() => {
+        //         country!.textContent = faker.address.country();
+        //         balance!.textContent =
+        //             "$" + faker.finance.amount().split(".").join(",") + 0;
+        //         popUp?.classList.toggle("slide-in");
+        //     }, 4000);
+        //     setTimeout(() => {
+        //         popUp?.classList.toggle("slide-out");
+        //     }, 5000);
+        // };
+        // // popUpLoad();
+        // setInterval(popUpLoad, 4000);
+        setInterval(() => {
+            country!.textContent = faker.address.country();
+            balance!.textContent =
+                "$" + faker.finance.amount().split(".").join(",") + 0;
+            popUp?.classList.toggle("slide-in");
+            setTimeout(() => {
+                popUp?.classList.toggle("slide-out");
+            }, 4000);
+        }, 7000);
+    });
+</script>

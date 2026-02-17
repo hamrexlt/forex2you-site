@@ -1,0 +1,89 @@
+---
+const cs_svg = "/images/cs.svg";
+const community_svg = "/images/community.svg";
+const blog_svg = "/images/blog.svg";
+
+const items = [
+  {
+    svg_class: "cs-svg",
+    title: "24/7 Chat Support",
+    body: "Get 24/7 chat support with our friendly customer service agents at your service.",
+  },
+  {
+    svg_class: "community-svg",
+    title: "FAQs",
+    body: "View FAQs for detailed instructions on specific features.",
+  },
+  {
+    svg_class: "blog-svg",
+    title: "Blog",
+    body: "Stay up to date with the latest stories and commentary.",
+  },
+];
+---
+
+<div class="lg:py-[80px] md:py-[64px] bg-[rgb(24,_26,_32)] py-[40px]">
+  <div
+    class="md:px-[24px] mx-auto max-w-[1248px] px-[16px]"
+    data-aos="flip-left"
+    data-aos-easing="linear"
+  >
+    <!-- Heading -->
+    <div class="lg:mb-[40px] md:mb-[32px] mb-[16px]">
+      <h1
+        class="lg:font-semibold lg:text-[40px] lg:leading-[48px] md:font-semibold md:text-[32px] md:leading-[40px] font-semibold text-[24px] leading-[32px] text-[rgb(234,_236,_239)]"
+      >
+        Need help?
+      </h1>
+    </div>
+    <!--  -->
+    <div class="flex flex-wrap -mx-[18px] min-w-0 m-0">
+      {
+        items.map((item) => (
+          <div class="lg:w-[33.33333333333333%] md:w-[50%] md:p-[24px] w-full rounded-lg p-4 flex flex-col m-0 min-w-0">
+            <div class="lg:flex-row md:flex-col flex flex-col min-w-0 m-0">
+              <div
+                class={`svg-item ${item.svg_class} md:w-[64px] md:h-[64px] w-[48px] h-[48px] flex-none relative overflow-hidden`}
+              />
+              <div class="lg:ml-[24px] lg:mt-0 md:ml-0 md:mt-[24px] ml-0 mt-[16px]">
+                <div class="m-0 min-w-0">
+                  <h4 class="lg:font-medium lg:text-[20px] lg:leading-[20px] md:font-semibold md:text-[24px] md:leading-[32px] text-[rgb(234,_236,_239)] leading-[28px] text-[20px] font-medium min-w-0 m-0">
+                    {item.title}
+                  </h4>
+                  <div class="lg:font-normal lg:text-[14px] lg:leading-[20px] md:font-normal md:text-[16px] md:leading-[24px] text-[rgb(183,_189,_198)] leading-[20px] text-[14px] font-normal mt-[8px] mx-[0]">
+                    <p class="min-h-[1.2em] min-w-0 m-0">{item.body}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</div>
+
+<style
+  define:vars={{
+    csSvg: `url("${cs_svg}")`,
+    //
+    communitySvg: `url("${community_svg}")`,
+    blogSvg: `url("${blog_svg}")`,
+  }}
+>
+  .svg-item {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center center;
+  }
+  .cs-svg {
+    background-image: var(--csSvg);
+  }
+  .community-svg {
+    background-image: var(--communitySvg);
+  }
+  .blog-svg {
+    background-image: var(--blogSvg);
+  }
+</style>

@@ -1,0 +1,81 @@
+---
+import Hero from "../components/Hero.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title={"Contact-Us"}>
+  <Hero title="Contact Us" />
+  <section class="lg:py-[80px] md:py-[64px] bg-[rgb(24,_26,_32)] py-[40px]">
+    <div class="container-fluid">
+      <div class="lg:grid lg:grid-cols-2 gap-4 flex flex-col">
+        <div>
+          <div class="lg:mb-[40px] md:mb-[32px] mb-[16px]">
+            <h1
+              class="lg:font-semibold lg:text-[40px] lg:leading-[48px] md:font-semibold md:text-[32px] md:leading-[40px] font-semibold text-[24px] leading-[32px] text-[rgb(234,_236,_239)]"
+            >
+              Message Us
+            </h1>
+          </div>
+          <p class="m-0 text-base text-text-primary">
+            Do not hesitate to reach out.
+            <br />
+            Just fill in the contact form here and we’ll be sure to reply as fast
+            as possible.
+          </p>
+        </div>
+        <form action="#" class="space-y-8">
+          <div>
+            <label
+              for="email"
+              class="block mb-2 text-sm font-medium text-text-light"
+              >Your email</label
+            >
+            <input
+              type="email"
+              id="email"
+              class="shadow-sm border text-sm block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-primary-500 focus:border-primary-500 focus:outline-none shadow-sm-light"
+              placeholder="name@email.com"
+              required
+            />
+          </div>
+          <div>
+            <label
+              for="subject"
+              class="block mb-2 text-sm font-medium text-text-light"
+              >Subject</label
+            >
+            <input
+              type="text"
+              id="subject"
+              class="block p-3 w-full text-sm border shadow-sm bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-primary-500 focus:border-primary-500 focus:outline-none shadow-sm-light"
+              placeholder="Let us know how we can help you"
+              required
+            />
+          </div>
+          <div class="sm:col-span-2">
+            <label
+              for="message"
+              class="block mb-2 text-sm font-medium text-text-light"
+              >Your message</label
+            >
+            <textarea
+              id="message"
+              rows="6"
+              class="block p-2.5 w-full text-sm shadow-sm border bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-primary-500 focus:border-primary-500 focus:outline-none"
+              placeholder="Leave a comment..."></textarea>
+          </div>
+          <!-- <button
+            type="submit"
+            class="py-3 px-5 text-sm font-medium text-center text-white bg-primary-700 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 bg-primary-600 hover:bg-primary-700 focus:ring-primary-800"
+            >Send message</button
+          > -->
+          <button
+            type="submit"
+            class="py-3 px-5 text-base font-normal text-center bg-custom-yellow sm:w-fit text-dark-secondary hover:opacity-[0.9]"
+            >Send message</button
+          >
+        </form>
+      </div>
+    </div>
+  </section>
+</Layout>

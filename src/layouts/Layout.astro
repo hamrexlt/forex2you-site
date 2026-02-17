@@ -1,0 +1,201 @@
+---
+import Header from "../components/Header";
+import Popup from "../components/Popup.astro";
+import ScrollToTop from "../components/ScrollToTop";
+import Footer from "../components/sections/Footer.astro";
+
+export interface Props {
+	title?: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<script
+			defer
+			src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+		></script>
+		<link
+			href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+			rel="stylesheet"
+		/>
+
+		<title>{title ? `${title} | Forex4You` : "Forex4You"}</title>
+		<style>
+			html {
+				line-height: 1.15;
+				text-size-adjust: 100%;
+			}
+		</style>
+	</head>
+	<!-- <body class="w-full h-screen overflow-x-hidden">
+    <div class="w-full h-screen overflow-y-auto overflow-x-hidden min-h-screen">
+      <div class="flex flex-col min-h-screen m-0 min-w-0">
+        <ScrollToTop client:only />
+        <Header pathname={Astro.url.pathname} client:load />
+        <slot />
+        <Footer />
+      </div>
+    </div>
+  </body> -->
+	<body class="w-full h-screen overflow-x-hidden">
+		<!-- <div class="w-full h-screen overflow-y-auto overflow-x-hidden min-h-screen">
+		<div class="flex flex-col min-h-screen m-0 min-w-0"> -->
+		<Header pathname={Astro.url.pathname} client:load />
+		<slot />
+		<Footer />
+		<!-- <ScrollToTop client:only /> -->
+		<Popup />
+		   
+    <!-- Whatsapp Start -->
+    <!-- <a-->
+
+    <!-- href="https://wa.me/447586359227" class="wpp-float-btn" target="_blank">-->
+
+    <!-- <iconify-icon icon="mdi:whatsapp" style="margin-top: 16px;"></iconify-icon>-->
+
+    <!-- </a> -->
+    <!-- Whatsapp End -->
+		<script defer src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+	</body>
+</html>
+<style is:global lang="postcss">
+  @import "../styles/iconmoon.css";
+  @import '../styles/global.css';
+ @import url("/css/all.min9e0b.css");
+
+	@tailwind base;
+	@tailwind components;
+  @layer components {
+    .mobile-nav-wrapper.expanded {
+		opacity: 1;
+		transform: translateX(0%);
+		transition: transform 0.5s ease 0ms, visibility 0.5s ease 0ms, -webkit-transform 0.5s ease 0ms;
+		visibility: visible;
+	}
+	.mobile-nav-wrapper.expanded .mobile-nav-content {
+		opacity: 1;
+		transform: translateX(0%);
+		transition: transform 0.5s ease 0.5s, visibility 0.5s ease 0.5s, -webkit-transform 0.5s ease 0.5s;
+		visibility: visible;
+	}
+	.mobile-nav-wrapper {
+		@apply fixed top-0 left-0 w-screen h-screen z-[999];
+		transform-origin: left center;
+		transform: translateX(-100%);
+		transition: 0.5s ease 0.5s, visibility 0.5s ease 0.5s;
+		visibility: hidden;
+	}
+	.mobile-nav-overlay {
+		@apply absolute top-0 left-0 right-0 bottom-0 opacity-50 bg-[#000] cursor-pointer;
+	}
+	.mobile-nav-content {
+		@apply w-[300px] bg-dark-primary z-[10] relative h-full overflow-y-auto py-[30px] px-[15px] opacity-0;
+		visibility: hidden;
+		-webkit-transform: translateX(-100%);
+		transform: translateX(-100%);
+		transition: opacity 0.5s ease 0ms, visibility 0.5s ease 0ms, transform 0.5s ease 0ms, -webkit-transform 0.5s ease 0ms;
+	}
+  }
+	@tailwind utilities;
+  @layer utilities{
+    /* .container-fluid {
+		@apply mx-auto w-full px-[1rem] xl:max-w-[1200px] max-w-[540px] lg:max-w-[960px] md:max-w-[720px];
+	} */
+	.container-fluid {
+		@apply lg:px-[24px] md:px-0 px-3 min-w-0 max-w-[1248px] mx-auto;
+	}
+  .custom-transition {
+		transition: all 0.3s ease-in;
+	}
+  /* .menu-item.active::after {
+		content: "";
+		transition: all 0.8s ease-out;
+		transform: scale(1, 1);
+		transform-origin: left center;
+	} */
+	.menu-item.active,
+  .menu-item:hover {
+		@apply text-custom-yellow;
+	}
+	/* .menu-item:hover {
+		@apply text-custom-yellow after:absolute after:h-[2px] after:w-full after:bottom-0 after:left-0 after:bg-custom-yellow;
+	} */
+	.scroll-to-top.active {
+		opacity: 1;
+		visibility: visible;
+	}
+	.scroll-to-top {
+		@apply h-[45px] w-[45px] fixed bottom-[40px] right-[40px] z-[99] text-center rounded-[50%] bg-custom-yellow flex items-center justify-center text-white opacity-0;
+		transition: all 0.4s ease;
+		visibility: hidden;
+	}
+	.row {
+		display: flex;
+		flex-wrap: wrap;
+		margin-top: calc(-1 * 0px);
+		margin-right: calc(-0.5 * 30px);
+		margin-left: calc(-0.5 * 30px);
+	}
+	.row > * {
+		flex-shrink: 0;
+		width: 100%;
+		max-width: 100%;
+		padding-right: calc(30px * 0.5);
+		padding-left: calc(30px * 0.5);
+		margin-top: 0px;
+	}
+  }
+  .wpp-float-btn{
+	position:fixed;
+  /* display: block; */
+	width:60px;
+	height:60px;
+  top: auto;
+	bottom:119px;
+  right: 27px;
+  left: auto;
+  /* left:59%; */
+	/* right:0px; */
+	background-color:#25d366;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+  font-size:30px;
+	box-shadow: 2px 2px 3px #999;
+  z-index:100;
+}
+
+@media (max-width: 450px) {
+  .wpp-float-btn {
+    right: 15px;
+    bottom: 109px;
+  }
+}
+
+.wpp-float-btn .wpp-float-icon{
+	margin-top:16px;
+}
+
+</style>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+<script>
+	window.addEventListener("DOMContentLoaded", function () {
+		//@ts-ignore
+		AOS.init({
+			once: false,
+			throttleDelay: 99,
+		});
+	});
+</script>
+
+<script src="//code.tidio.co/yd6swpqdh9eqcuvtec3bampn72xmhqtw.js" async
+></script>

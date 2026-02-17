@@ -1,0 +1,242 @@
+---
+// const footerItems = [
+//   [
+//     {
+//       title: "Markets",
+//       links: [
+//         { text: "Forex", url: "#" },
+//         { text: "Cryptos", url: "#" },
+//         { text: "Shares", url: "#" },
+//         { text: "Indices", url: "#" },
+//       ],
+//     },
+//     {
+//       title: "Trading",
+//       links: [
+//         { text: "Platform", url: "#" },
+//         { text: "Pricing", url: "#" },
+//         { text: "PAMM", url: "#" },
+//         { text: "Help Centre/FAQ", url: "#" },
+//       ],
+//     },
+//     {
+//       title: "Company", 
+//       links: [
+//         { text: "Why Us", url: "#" },
+//         { text: "Contact Us", url: "#" },
+//         // { text: "Certificate of Incorporation", url: "#" },
+//       ],
+//     },
+//   ],
+//   [
+//     {
+//       title: "Account",
+//       links: [
+//         { text: "Login", url: "#" },
+//         { text: "Sign Up", url: "#" },
+//       ],
+//     },
+//     {
+//       title: "Timing",
+//       links: [
+//         { text: "Mon Fri: 7:00am - 6:00pm", url: "#" },
+//         { text: "Saturday: 9:00am - 5:00pm", url: "#" },
+//         { text: "Sunday: Closed", url: "#" },
+//       ],
+//     },
+//   ],
+// ];
+const footerItems = [
+  [
+    {
+      title: "Company",
+      links: [
+        { text: "Home", url: "/" },
+        { text: "About Us", url: "/about" },
+        { text: "Contact Us", url: "/contact-us" },
+        { text: "FAQs", url: "/faqs" },
+      ],
+    },
+    {
+      title: "Legal",
+      links: [
+        { text: "Privacy Policy", url: "/legal/privacy-policy" },
+        // { text: "Terms of Service", url: "/legal/terms-of-service" },
+        { text: "Certificate of Incorporation", url: "#" },
+        // { text: "Help Centre/FAQ", url: "#" },
+      ],
+    },
+    {
+      title: "Contact", 
+      links: [
+        { text: "support@forex4you.space", url: "mailto:support@forex4you.space" },
+        { text: "+1 (617) 209-9232", url: "#" },
+        // { text: "Certificate of Incorporation", url: "#" },
+      ],
+    },
+  ],
+  [
+    {
+      title: "Account",
+      links: [
+        { text: "Login", url: "https://app.forex4yoult.space/auth/login" },
+        { text: "Sign Up", url: "https://app.forex4yoult.space/auth/signup" },
+      ],
+    },
+    {
+      title: "Timing",
+      links: [
+        { text: "Mon Fri: 7:00am - 6:00pm", url: "#" },
+        { text: "Saturday: 9:00am - 5:00pm", url: "#" },
+        { text: "Sunday: Closed", url: "#" },
+      ],
+    },
+  ],
+];
+---
+
+<footer class="md:pt-12 pt-6 m-0 min-w-0 bg-dark-primary">
+  <section class="lg:px-[24px] md:px-0 px-0 min-w-0 max-w-[1248px] mx-auto">
+    <!-- Top -->
+    <div
+      class="lg:flex-row lg:px-0 md:flex-col md:pb-4 md:px-6 px-4 flex flex-col pb-6"
+    >
+      <div
+        class="lg:flex-grow-[4] lg:flex-shrink lg:basis-[0%] md:flex-grow-[1] md:flex-shrink md:basis-[0%] md:flex-row flex-col flex-grow-[1] flex-shrink basis-[0%] flex m-0 min-w-0"
+      >
+        <!--  -->
+        <!-- First -->
+        <div
+          class="md:flex-grow-[3] md:flex-shrink md:basis-[0%] md:flex block flex-grow-[1] flex-shrink basis-[0%]"
+        >
+          <!-- Start -->
+          {
+            footerItems[0].map(({ title, links }) => (
+              <div
+                class="md:pr-4 text-text-light flex-grow-[1] flex-shrink basis-[0%] pr-0"
+                x-data="{expanded:false}"
+              >
+                <div
+                  x-on:click="expanded = !expanded"
+                  class="md:py-4 md:pointer-events-none flex pointer-events-auto py-3"
+                >
+                  <h5 class="md:text-xl font-medium text-base flex-grow-[1] flex-shrink basis-[0%]">
+                    {title}
+                  </h5>
+
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    class="md:hidden block w-5 h-5"
+                    x-show="!expanded"
+                  >
+                    <path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z" />
+                  </svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    class="w-5 h-5 md:hidden block"
+                    x-show="expanded"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M4 10a.75.75 0 01.75-.75h10.5a.75.75 0 010 1.5H4.75A.75.75 0 014 10z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </div>
+                <div
+                :class="{'max-h-[40em]': expanded}"
+                  class="md:max-h-[40em] overflow-hidden max-h-0 m-0 min-w-0"
+                  style="transition: 0.3s all;"
+                >
+                  {links.map(({ text, url }) => (
+                    <a
+                      class="md:mb-3 mb-3 flex text-sm text-text-primary"
+                      href={url}
+                    >
+                      {text}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            ))
+          }
+          <!-- End -->
+        </div>
+        <!-- Second -->
+        <div
+          class="lg:flex lg:flex-grow-[2] lg:flex-shrink lg:basis-[0%] md:flex-grow-[1] md:flex-shrink md:basis-[0%] md:block flex-grow-[1] flex-shrink basis-[0%] block"
+        >
+          <!-- Start -->
+          {
+            footerItems[1].map(({ title, links }) => (
+              <div
+                class="md:pr-4 text-text-light flex-grow-[1] flex-shrink basis-[0%] pr-0"
+                x-data="{expanded:false}"
+              >
+                <div
+                  class="md:py-4 md:pointer-events-none flex pointer-events-auto py-3"
+                  x-on:click="expanded = !expanded"
+                >
+                  <h5 class="md:text-xl font-medium text-base flex-grow-[1] flex-shrink basis-[0%]">
+                    {title}
+                  </h5>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    class="block w-5 h-5 md:hidden"
+                    x-show="!expanded"
+                  >
+                    <path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z" />
+                  </svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    class="w-5 h-5 md:hidden block"
+                    x-show="expanded"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M4 10a.75.75 0 01.75-.75h10.5a.75.75 0 010 1.5H4.75A.75.75 0 014 10z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </div>
+                <div
+                :class="{'max-h-[40em]': expanded}"
+                  class="md:max-h-[40em] overflow-hidden max-h-0 m-0 min-w-0"
+                  style="transition: 0.3s all;"
+                >
+                  {links.map(({ text, url }) => (
+                    <a
+                      class="md:mb-3 mb-3 flex text-sm text-text-primary"
+                      href={url}
+                    >
+                      {text}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            ))
+          }
+          <!-- End -->
+        </div>
+        <!--  -->
+        <!-- <h1 class="text-white">Foo</h1> -->
+      </div>
+    </div>
+    <!-- Bottom -->
+    <div
+      class="lg:mx-0 md:py-8 md:mx-[24px] m-0 min-w-0 flex border-t border-t-dark-tertiary text-sm py-6 mx-4 items-center flex-col"
+    >
+      <p class="text-sm text-text-primary leading-5">
+        Copyright © {new Date().getFullYear()} All Rights Reserved
+      </p>
+    </div>
+  </section>
+</footer>

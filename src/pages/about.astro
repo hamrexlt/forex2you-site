@@ -1,0 +1,37 @@
+---
+import Hero from "../components/Hero.astro";
+import AboutCompanySection from "../components/sections/AboutCompanySection.astro";
+import BenefitSection from "../components/sections/BenefitSection.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title={"About"}>
+  <Hero title="About Us" />
+  <div class="lg:py-[80px] md:py-[64px] bg-[rgb(24,_26,_32)] py-[40px]">
+    <div class="container-fluid">
+      <!-- Heading -->
+      <div class="lg:mb-[40px] md:mb-[32px] mb-[16px]">
+        <h1
+          class="lg:font-semibold lg:text-[40px] lg:leading-[48px] md:font-semibold md:text-[32px] md:leading-[40px] font-semibold text-[24px] leading-[32px] text-[rgb(234,_236,_239)]"
+        >
+          We are always ready for a challenge.
+        </h1>
+      </div>
+      <p class="m-0 text-base text-text-primary">
+        Forex4You Trading is a successful online trading and investment platform
+        for brokers interested in Foreign Exchange, Stock Market Trading, and
+        Cryptocurrency Trading. We give our users the potential to generate
+        financial returns on both rising and falling prices across indices, FX,
+        commodities, shares and cryptocurrencies. We strive to help our clients
+        make the most out of online trading by assisting them to access
+        liquidity and manage risk effectively. Our comprehensive technology,
+        state-of-the-art security encryption, and unparalleled network allow us
+        to deliver an unforgettable trading experience.
+      </p>
+    </div>
+    <BenefitSection />
+  </div>
+  <AboutCompanySection />
+</Layout>
+
+<style></style>
